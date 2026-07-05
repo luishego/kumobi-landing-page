@@ -1,0 +1,94 @@
+---
+
+---
+
+<section class="section location" id="ubicacion">
+  <p class="eyebrow">Coordenadas del nodo</p>
+  <h2 class="section-title glitch-hover">Sector 03 · Mixcoac</h2>
+
+  <div class="location__grid">
+    <dl class="location__data">
+      <div>
+        <dt>Zona</dt>
+        <dd>Mixcoac, Ciudad de México</dd>
+      </div>
+      <div>
+        <dt>Dirección exacta</dt>
+        <dd>
+          <a
+            target="_blank"
+            href="https://maps.app.goo.gl/4TJTvgWNY6NFaKVv7"
+            rel="noopener noreferrer">Ver en Google Maps</a
+          >
+        </dd>
+      </div>
+      <div>
+        <dt>Ventana operativa</dt>
+        <dd>Martes - sábado – 13:00 - 22:00 hrs <br/> Domingo – 13:00 - 20:00 hrs</dd>
+      </div>
+      <div>
+        <dt>Canal de extracción</dt>
+        <dd> <a href="https://www.rappi.com.mx/restaurantes/1930439887-kumobi?csr=true" target="_blank" rel="noopener noreferrer">Entrega vía Rappi</a>  <br/> 
+          <a href="https://maps.app.goo.gl/4TJTvgWNY6NFaKVv7" target="_blank" rel="noopener noreferrer">Pick up en el nodo</a> <br/> 
+          <a href="https://api.whatsapp.com/send/?phone=525520785014&text&type=phone_number&app_absent=1" target="_blank" rel="noopener noreferrer">Ordena vía WhatsApp</a> </dd>
+      </div>
+    </dl>
+
+    <div class="location__action">
+      <p class="location__note">
+        No hay puerta visible. El pedido llega, la señal se corta.
+        <br />#NEOMIXCOACRESISTE
+      </p>
+      <a href="https://www.rappi.com.mx/restaurantes/1930439887-kumobi?csr=true" target="_blank" rel="noopener noreferrer" class="btn">Pedir por Rappi</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .location__grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (max-width: 720px) {
+    .location__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .location__data div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--niebla-dim);
+    flex-wrap: wrap;
+  }
+
+  .location__data dt {
+    color: var(--niebla);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .location__data dd {
+    color: var(--texto);
+    font-size: 0.9rem;
+    text-align: right;
+  }
+
+  .location__action {
+    background: var(--negro-panel);
+    border-left: 2px solid var(--verde-glitch);
+    padding: 1.75rem;
+  }
+
+  .location__note {
+    color: var(--niebla);
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+</style>

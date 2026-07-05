@@ -1,0 +1,234 @@
+---
+const burgers = [
+  {
+    id: "UNIT_01",
+    name: "Clásica",
+    tag: "La Insignia",
+    desc: '1/4 lb de carne de res real, queso cheddar fundido como lava y salsa "Fuego de Serpiente".',
+  },
+  {
+    id: "UNIT_02",
+    name: "Cheese & Chimmi",
+    tag: "La Especial",
+    desc: "Carne con costra de pimienta negra, cebolla caramelizada en glitch de sake y pulque, ajo negro de la Nube.",
+  },
+  {
+    id: "UNIT_03",
+    name: "Bacon",
+    tag: "La Fugitiva",
+    desc: "Pechuga karaage ultra crujiente, col-slaw con destellos de jengibre, pan brioche sellado a soplete.",
+  },
+  {
+    id: "UNIT_04",
+    name: "Teriyaki",
+    tag: "La importada",
+    desc: "Pechuga karaage ultra crujiente, col-slaw con destellos de jengibre, pan brioche sellado a soplete.",
+  },
+];
+
+const wings = [
+  {
+    name: "Cyber-Wings · Garlic Parmesan",
+    desc: "Bañadas en teriyaki agridulce con sésamo negro. El sistema funciona con normalidad.",
+  },
+  {
+    name: "Cyber-Wings · BBQ",
+    desc: "Bañadas en teriyaki agridulce con sésamo negro. El sistema funciona con normalidad.",
+  },
+  {
+    name: "Cyber-Wings · Sriracha",
+    desc: "Fusión nuclear de habanero y especias asiáticas. Reinicio inmediato del sistema nervioso.",
+  },
+  {
+    name: "Cyber-Wings · Teriyaki",
+    desc: "Fusión nuclear de habanero y especias asiáticas. Reinicio inmediato del sistema nervioso.",
+  },
+  {
+    name: "Cyber-Wings · System Warning",
+    desc: "Fusión nuclear de habanero y especias asiáticas. Reinicio inmediato del sistema nervioso.",
+  },
+  {
+    name: "Cyber-Wings · System Crash",
+    desc: "Fusión nuclear de habanero y especias asiáticas. Reinicio inmediato del sistema nervioso.",
+  },
+];
+
+const chips = [
+  {
+    name: "Papas Microchips",
+    desc: "Corte de precisión tecnológica, polvo secreto de chiles. Decide el nivel de amenaza.",
+  },
+];
+---
+
+<section class="section menu" id="menu">
+  <p class="eyebrow">
+    Sistema de suministros
+  </p>
+  <h2 class="section-title glitch-hover">El menú</h2>
+
+  <div class="menu__block">
+    <h3 class="menu__block-title">
+      🍔 Cyber-Burgers <span>— Las principales</span>
+    </h3>
+    <div class="menu__grid">
+      {
+        burgers.map((b) => (
+          <article class="card">
+            <div class="card__head">
+              <span class="card__id">{b.id}</span>
+            </div>
+            <h4 class="card__name">{b.name}</h4>
+            <p class="card__tag">{b.tag}</p>
+            <p class="card__desc">{b.desc}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="menu__block">
+    <h3 class="menu__block-title">
+      🍗 Cyber-Wings <span>— niveles de amenaza</span>
+    </h3>
+    <div class="menu__grid menu__grid--wide">
+      {
+        wings.map((w) => (
+          <article class="card card--alt">
+            <div class="card__head">
+            </div>
+            <h4 class="card__name">{w.name}</h4>
+            <p class="card__desc">{w.desc}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="menu__block">
+    <h3 class="menu__block-title">
+      💾 Data Chips <span>— complementos de red</span>
+    </h3>
+    <div class="menu__grid menu__grid--wide">
+      {
+        chips.map((c) => (
+          <article class="card card--alt">
+            <div class="card__head">
+            </div>
+            <h4 class="card__name">{c.name}</h4>
+            <p class="card__desc">{c.desc}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+
+  <p class="menu__addon">
+    <span class="menu__addon-label">⚡ Modo Dragón (龍)</span> — Proteína adicional en cualquier Cyber-Burger.<br />
+    <span class="menu__addon-label">⚡ Modo Molten Cheese (溶)</span> — Dosis adicional de queso derretido en cualquier Cyber-Burger.<br />
+    <span class="menu__addon-label">⚡ Modo Extra bacon (ベーコン)</span> — Extra bacon en cualquier Cyber-Burger.<br />
+
+  </p>
+</section>
+
+<style>
+  .menu__block {
+    margin-bottom: 3.5rem;
+  }
+
+  .menu__block-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--oro-neon);
+    margin-bottom: 1.25rem;
+  }
+
+  .menu__block-title span {
+    color: var(--niebla);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: none;
+    letter-spacing: 0.02em;
+  }
+
+  .menu__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--niebla-dim);
+    border: 1px solid var(--niebla-dim);
+  }
+
+  .menu__grid--wide {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .card {
+    background: var(--negro-panel);
+    padding: 1.5rem;
+    transition: background 0.2s ease;
+  }
+
+  .card:hover {
+    background: #1b1b1b;
+  }
+
+  .card__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .card__id {
+    font-size: 0.7rem;
+    color: var(--niebla-dim);
+    letter-spacing: 0.1em;
+  }
+
+  .card__price {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: var(--fuego-serpiente);
+    font-size: 0.9rem;
+  }
+
+  .card__name {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .card__tag {
+    color: var(--verde-glitch);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0.3em 0 0.8em;
+  }
+
+  .card__desc {
+    color: var(--niebla);
+    font-size: 0.85rem;
+    line-height: 1.55;
+  }
+
+  .card--alt .card__name {
+    font-size: 1.2rem;
+  }
+
+  .menu__addon {
+    border: 1px dashed var(--oro-neon);
+    padding: 1.25rem 1.5rem;
+    color: var(--niebla);
+    font-size: 0.85rem;
+  }
+
+  .menu__addon-label {
+    color: var(--oro-neon);
+    font-weight: 700;
+  }
+</style>

@@ -1,0 +1,163 @@
+---
+const bootLines = [
+  '> localizando_señal...',
+  '> nodo_encontrado: MIXCOAC / SECTOR_03',
+  '> descifrando_frecuencia... OK',
+  '> acceso_concedido: RESISTENCIA_ALIMENTARIA',
+];
+---
+
+<section class="hero" id="inicio">
+  <div class="hero__boot" id="boot" aria-hidden="true"></div>
+
+  <div class="hero__body" id="hero-body">
+    <p class="eyebrow">Transmisión activa · Sector 03, Mixcoac</p>
+
+    <h1 class="hero__title glitch-hover">KUMOBI</h1>
+
+    <p class="hero__jp">雲の中の蛇 <span>— la serpiente dentro de la nube —</span></p>
+
+    <p class="hero__desc">
+      Dark kitchen clandestina. Hack-Bites reales para quienes siguen despiertos
+      cuando La Nube cubre Mixcoac. Sin polímeros sintéticos, sin preguntas.
+    </p>
+
+    <div class="hero__actions">
+      <a href="#menu" class="btn">Ver suministros</a>
+      <a href="#ubicacion" class="btn btn--gold">Coordenadas del nodo</a>
+    </div>
+  </div>
+
+  <div class="hero__scan"></div>
+</section>
+
+<script define:vars={{ bootLines }}>
+  const bootEl = document.getElementById('boot');
+  const bodyEl = document.getElementById('hero-body');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reduced || !bootEl) {
+    bodyEl.style.opacity = '1';
+    bodyEl.style.transform = 'none';
+    if (bootEl) bootEl.style.display = 'none';
+  } else {
+    let lineIndex = 0;
+    let charIndex = 0;
+    let currentLineEl;
+
+    function typeNext() {
+      if (lineIndex >= bootLines.length) {
+        setTimeout(() => {
+          bootEl.style.opacity = '0';
+          bodyEl.classList.add('is-visible');
+          setTimeout(() => (bootEl.style.display = 'none'), 500);
+        }, 300);
+        return;
+      }
+      if (charIndex === 0) {
+        currentLineEl = document.createElement('div');
+        currentLineEl.className = 'hero__boot-line';
+        bootEl.appendChild(currentLineEl);
+      }
+      const line = bootLines[lineIndex];
+      currentLineEl.textContent = line.slice(0, charIndex + 1);
+      charIndex++;
+      if (charIndex >= line.length) {
+        lineIndex++;
+        charIndex = 0;
+        setTimeout(typeNext, 180);
+      } else {
+        setTimeout(typeNext, 18);
+      }
+    }
+    typeNext();
+  }
+</script>
+
+<style>
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 6rem 1.5rem;
+    max-width: 1120px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .hero__boot {
+    position: absolute;
+    top: 6rem;
+    left: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--verde-glitch);
+    transition: opacity 0.5s ease;
+  }
+
+  .hero__boot-line::after {
+    content: '_';
+    animation: blink 0.9s steps(1) infinite;
+  }
+
+  .hero__body {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    margin-top: 5.5rem;
+  }
+
+  .hero__body.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(3.5rem, 13vw, 8.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.01em;
+    color: var(--texto);
+    margin: 0.3em 0 0.25em;
+  }
+
+  .hero__jp {
+    font-family: var(--font-jp);
+    font-size: 1.15rem;
+    color: var(--oro-neon);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero__jp span {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--niebla);
+    display: block;
+    margin-top: 0.3em;
+    letter-spacing: 0.05em;
+  }
+
+  .hero__desc {
+    max-width: 46ch;
+    color: var(--niebla);
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hero__scan {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at 15% 20%, rgba(255, 62, 30, 0.08), transparent 45%),
+      radial-gradient(circle at 85% 75%, rgba(57, 255, 20, 0.05), transparent 40%);
+  }
+</style>
