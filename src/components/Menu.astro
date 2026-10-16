@@ -17,46 +17,36 @@ const burgers = [
     name: "Bacon",
     tag: "La Fugitiva",
     desc: "1/4 lb de carne de res Choice con mermelada de tocino artesanal y cebolla caramelizada. Se mueve fuera del radar: dulce, ahumada, casi imposible de rastrear.",
-  },
-  {
-    id: "UNIT_04",
-    name: "Teriyaki",
-    tag: "La Importada",
-    desc: "1/4 lb de carne de res Choice con piña asada y salsa teriyaki de la casa. Dato importado de otro sector: dulce, ácida y letal.",
-  },
+  }
 ];
 
 const wings = [
   {
     name: "Cyber-Wings · Garlic Parmesan",
-    desc: "Bañadas en mantequilla de ajo rostizado y parmesano fundido. Proceso estable, cero alertas.",
+    desc: "Aderezadas con nuestra receta de ajos y parmesano fundido, cero alertas.",
   },
   {
     name: "Cyber-Wings · BBQ",
-    desc: "Glaseado ahumado, dulce y con un toque especiado. Arde lento: el sistema resiste.",
+    desc: "Glaseado ahumado, dulce y con un toque especiado.",
   },
   {
     name: "Cyber-Wings · Sriracha",
-    desc: "Payload de chile fermentado, ajo y vinagre. Picor en aumento, firewall bajo estrés.",
+    desc: "Payload de chile fermentado, ajo y vinagre. Picor en aumento.",
   },
   {
-    name: "Cyber-Wings · Teriyaki",
-    desc: "Bañadas en teriyaki agridulce. El sistema funciona con normalidad.",
-  },
-  {
-    name: "Cyber-Wings · System Warning",
+    name: "Cyber-Wings · Red-Hot",
     desc: "Chile de árbol y especias que elevan la temperatura. Alerta de picor: sistema bajo presión.",
   },
   {
-    name: "Cyber-Wings · System Crash",
-    desc: "Fusión nuclear de habanero y especias asiáticas. Kernel panic: reinicio total del sistema nervioso.",
+    name: "Cyber-Wings · Mango Habanero",
+    desc: "Fusión nuclear de habanero con un toque de mango. Reinicio total del sistema nervioso.",
   },
 ];
 
 const chips = [
   {
-    name: "Papas Microchips",
-    desc: "Corte de precisión tecnológica, polvo secreto de chiles. Decide el nivel de amenaza.",
+    name: "Data Chips · 100gr",
+    desc: "Papas fritas con polvo secreto de chiles.",
   },
 ];
 ---
@@ -69,7 +59,7 @@ const chips = [
 
   <div class="menu__block">
     <h3 class="menu__block-title">
-      🍔 Cyber-Burgers <span>— Las principales</span>
+       Cyber-Burgers <span>— Las principales</span>
     </h3>
     <div class="menu__grid">
       {
@@ -89,7 +79,7 @@ const chips = [
 
   <div class="menu__block">
     <h3 class="menu__block-title">
-      🍗 Cyber-Wings <span>— niveles de amenaza</span>
+      Cyber-Wings <span>- Elige entre 5, 10 ó 15 piezas.</span>
     </h3>
     <div class="menu__grid menu__grid--wide">
       {
@@ -107,7 +97,7 @@ const chips = [
 
   <div class="menu__block">
     <h3 class="menu__block-title">
-      💾 Data Chips <span>— complementos de red</span>
+      Data Chips <span>— complementos</span>
     </h3>
     <div class="menu__grid menu__grid--wide">
       {
@@ -124,9 +114,9 @@ const chips = [
   </div>
 
   <p class="menu__addon">
-    <span class="menu__addon-label">⚡ Modo Dragón (龍)</span> — Proteína adicional en cualquier Cyber-Burger.<br />
-    <span class="menu__addon-label">⚡ Modo Molten Cheese (溶)</span> — Dosis adicional de queso derretido en cualquier Cyber-Burger.<br />
-    <span class="menu__addon-label">⚡ Modo Extra bacon (ベーコン)</span> — Extra bacon en cualquier Cyber-Burger.<br />
+    <span class="menu__addon-label"> Modo Dragón (龍)</span> — Proteína adicional en cualquier Cyber-Burger.<br />
+    <span class="menu__addon-label"> Modo Molten Cheese (溶)</span> — Dosis adicional de queso derretido en cualquier Cyber-Burger.<br />
+    <span class="menu__addon-label"> Modo Extra bacon (ベーコン)</span> — Extra bacon en cualquier Cyber-Burger.<br />
 
   </p>
 </section>
